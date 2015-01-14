@@ -1,10 +1,4 @@
 (function() {
-	window.Element = function(data) {
-		this.name = data.name;
-		this.molarMass = data.molarMass;
-		this.quantity = data.quantity;
-	};
-
 	window.Formula = function(elements) {
 		this.elements = elements;
 	};
@@ -32,7 +26,6 @@
 	};
 
 	window.Formula.prototype.percentCompositionOf = function(name) {
-		var element = null;
 		for(index in this.elements) {
 			if(this.elements[index].name === name) {
 				return this.elements[index].molarMass / this.getTotalMolarMass();
