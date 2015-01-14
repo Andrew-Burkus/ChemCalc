@@ -5,7 +5,7 @@ Somewhat working.
 ##Elements
 A simple object represenation of an element.
 ###Constructor
-'''javascript
+```javascript
 var Carbon = new Element({
 	name: 'Carbon',
 	molarMass: 12.01,
@@ -17,23 +17,23 @@ var Oxygen = new Element({
 	molarMass: 16.0,
 	quantity: 2 // Since Oxygen is a diatomic element, SCIENCE.
 });
-'''
+```
 The constructor can be invoked without specifying a quantity.
-'''javascript
+```javascript
 var Carbon = new Element({
 	name: 'Carbon',
 	molarMass: 12.01
 });
-'''
+```
 This only poses an issue if the quantity is left empty within a Formula object.
 In order to use an Element with a __null__ quantity in a formula, use the _withQuantity_ method.
-'''javascript
+```javascript
 var Carbon3 = Carbon.withQuantity(3);
-'''
+```
 _withQuantity_ returns a copy of the Element, with the new quantity. There are no side-effects.
 ##Formulas
 A formula is simply a list of Element objects. 
 ###Constructor
-'''javascript
+```javascript
 var CarbonDioxide = new Formula([Carbon, Oxygen.withQuantity(2)]);
-'''
+```
