@@ -1,4 +1,4 @@
-(function() {
+
 	var avogrado = function() {
 		return 6.02 * Math.pow(10, 23);
 	};
@@ -26,4 +26,3 @@
 	var particlesToMoles = function(x) {
 		return x / avogrado();
 	};
-})();
