@@ -23,6 +23,7 @@ var Oxygen = new Element({
 });
 ```
 The constructor can be invoked without specifying a quantity.
+
 ```javascript
 var Carbon = new Element({
 	name: 'Carbon',
@@ -31,16 +32,42 @@ var Carbon = new Element({
 ```
 This only poses an issue if the quantity is left empty within a Formula object.
 In order to use an Element with a __null__ quantity in a formula, use the _withQuantity_ method.
+
 ```javascript
 var Carbon3 = Carbon.withQuantity(3);
 ```
 _withQuantity_ returns a copy of the Element, with the new quantity. There are no side-effects.
+
 ##Formulas
 
-A formula is simply a list of Element objects. 
+A formula is simply a list of Element objects. Order is a not factor.
 
 ###Constructor
 
 ```javascript
 var CarbonDioxide = new Formula([Carbon, Oxygen.withQuantity(2)]);
+var HydrochloricAcid = new Formula([
+	new Element({
+		name: 'Hydrogen',
+		molarMass: 1.01
+		}).withQuantity(1),
+	new Element({
+		name: 'Chlorine',
+		molarMass: 35.45,
+		quantity: 1
+		})
+]);
+```
+
+###Formula's other lovely Methods
+
+####enumElementsWith
+Takes a function to be used with all elements in a given Formula.
+
+```javascript
+var double = function(element) {
+	element = element.withQuantity(element.quantity * 2);
+};
+
+HydrochloricAcid.enumElementsWith(double);
 ```
