@@ -1,10 +1,14 @@
 #ChemCalc
+
 Studying chemistry, why not make a JS based chemical calculator?
 Somewhat working.
 
 ##Elements
+
 A simple object represenation of an element.
+
 ###Constructor
+
 ```javascript
 var Carbon = new Element({
 	name: 'Carbon',
@@ -32,8 +36,11 @@ var Carbon3 = Carbon.withQuantity(3);
 ```
 _withQuantity_ returns a copy of the Element, with the new quantity. There are no side-effects.
 ##Formulas
+
 A formula is simply a list of Element objects. 
+
 ###Constructor
+
 ```javascript
 var CarbonDioxide = new Formula([Carbon, Oxygen.withQuantity(2)]);
 ```
