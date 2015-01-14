@@ -11,6 +11,14 @@ var litersToGalons = function(x) {
 	return x / 3.79;
 };
 
+var mlToLiters = function(x) {
+	return x / 1000.0;
+};
+
+var litersTomL = function(x) {
+	return x * 1000.0;
+};
+
 var poundsToGrams = function(x) {
 	return x * 454.0;
 };
@@ -29,4 +37,8 @@ var particlesToMoles = function(x) {
 
 var molesToLiters = function(x) {
 	return x * 22.4;
+};
+
+var litersToMoles = function(x) {
+	return x / 22.4;
 };

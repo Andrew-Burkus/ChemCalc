@@ -32,4 +32,8 @@
 			}
 		}
 	};
+
+	window.Formula.prototype.densityOfVolumeAtStp = function(volume) {
+		return litersToMoles(volume) * this.getTotalMolarMass();
+	};
 })();
