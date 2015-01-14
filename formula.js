@@ -2,11 +2,11 @@
 	window.Element = function(data) {
 		this.name = data.name;
 		this.molarMass = data.molarMass;
+		this.quantity = data.quantity;
 	};
 
-	window.Formula = function(elements, numOfElements) {
+	window.Formula = function(elements) {
 		this.elements = elements;
-		this.count = numOfElements;
 	};
 
 	window.Formula.prototype.enumElementsWith = function(lambda) {
@@ -26,7 +26,7 @@
 	window.Formula.prototype.getTotalMolarMass = function() {
 		var totalMass = 0;
 		for(index in this.elements) {
-			totalMass += this.elements[index].molarMass * this.count[index];
+			totalMass += this.elements[index].molarMass * this.elements[index].quantity;
 		}
 		return totalMass;
 	};
@@ -35,7 +35,7 @@
 		var element = null;
 		for(index in this.elements) {
 			if(this.elements[index].name === name) {
-				return this.elements[index] / this.getTotalMolarMass();
+				return this.elements[index].molarMass / this.getTotalMolarMass();
 			}
 		}
 	};
