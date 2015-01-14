@@ -58,16 +58,3 @@ var HydrochloricAcid = new Formula([
 		})
 ]);
 ```
-
-###Formula's other lovely Methods
-
-####enumElementsWith
-Takes a function to be used with all elements in a given Formula.
-
-```javascript
-var double = function(element) {
-	element = element.withQuantity(element.quantity * 2);
-};
-
-HydrochloricAcid.enumElementsWith(double);
-```

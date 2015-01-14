@@ -3,12 +3,6 @@
 		this.elements = elements;
 	};
 
-	window.Formula.prototype.enumElementsWith = function(lambda) {
-		for(index in this.elements) {
-			lambda(this.elements[index]);
-		}
-	};
-
 	window.Formula.prototype.listElements = function() {
 		for(index in this.elements) {
 			var elem = this.elements[index];
@@ -33,7 +27,7 @@
 		}
 	};
 
-	window.Formula.prototype.densityOfVolumeAtStp = function(volume) {
+	window.Formula.prototype.densityAtStpWithVolume = function(volume) {
 		return litersToMoles(volume) * this.getTotalMolarMass();
 	};
 })();

@@ -1,4 +1,3 @@
-
 var avogrado = function() {
 	return 6.02 * Math.pow(10, 23);
 };
